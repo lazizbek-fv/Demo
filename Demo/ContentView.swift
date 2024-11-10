@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         HStack{
             CardWiev(isFacedUp: true)
-            CardWiev()
-            CardWiev()
+            CardWiev(isFacedUp: true)
+            CardWiev(isFacedUp: true)
             CardWiev()
             
         }
@@ -21,28 +21,26 @@ struct ContentView: View {
     }
 }
 struct CardWiev :View {
-    var isFacedUp: Bool = false
+    @State var isFacedUp: Bool = false
     var body: some View {
         ZStack {
+            let base = RoundedRectangle(cornerRadius: 20)
             if isFacedUp {
-                RoundedRectangle(cornerRadius: 20)
-                               .foregroundColor(.orange)
-                           RoundedRectangle(cornerRadius: 19)
-                               .strokeBorder(lineWidth : 2)
+                
+                        base.foregroundColor(.orange)
+                        base.strokeBorder(lineWidth : 2)
                            Text("🤖").font(.largeTitle)
             }
             else    {
-                RoundedRectangle(cornerRadius: 20)
-                               .foregroundColor(.orange)
+                base.foregroundColor(.yellow)
             }
-           
-                
-                
-              
-                
         }
-    }
-}
+        .onTapGesture (){
+            print("tapped")
+            isFacedUp.toggle()
+            }
+            }
+        }
 
 
 
