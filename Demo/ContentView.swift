@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🕷️", "🎃", "😈", "🤖", "👻", "🧙‍♀️", "🧛‍♂️", "🧟‍♀️", "🕷️", "🎃", "😈", "🤖","🕷️", "🎃", "😈", "🤖", "👻", "🧙‍♀️", "🧛‍♂️", "🧟‍♀️", "🕷️", "🎃", "😈", "🤖"]
+    let emojis = ["🕷️", "🎃", "😈", "🤖", "👻", "🧙‍♀️", "🧛‍♂️", "🧟‍♀️", "🕷️", "🎃", "😈", "🤖", "🕷️", "🎃", "😈", "🤖", "👻", "🧙‍♀️", "🧛‍♂️", "🧟‍♀️", "🕷️", "🎃", "😈", "🤖"]
     @State var cardCount: Int = 4
     var body: some View {
         VStack {
             ScrollView {
                 cards
             }
-            
+
             Spacer()
             HStack {
                 cardAdder
@@ -37,7 +37,7 @@ struct ContentView: View {
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
             ForEach(0 ..< cardCount, id: \.self) { index in
                 CardWiev(content: emojis[index])
-                    .aspectRatio(2/3, contentMode: .fit)
+                    .aspectRatio(2 / 3, contentMode: .fit)
             }
         }
     }
