@@ -15,7 +15,6 @@ struct ContentView: View {
             ScrollView {
                 cards
             }
-
             Spacer()
             HStack {
                 cardAdder
